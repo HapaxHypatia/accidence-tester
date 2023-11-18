@@ -1,0 +1,30 @@
+#questioncontainer{
+    width: 50%;
+    display: grid;
+    place-items: center stretch;
+}
+
+.question{
+    background-color: lightgreen;
+    height: 100px;
+    margin: 1px;
+    }
+.answerbox{
+    /*border: solid coral 3px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.option{
+    background-color: lightblue;
+    width: 49.5%;
+    height: 50px;
+    margin: 2px;
+
+}
+.option:hover{
+    background-color: darkslategrey;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
