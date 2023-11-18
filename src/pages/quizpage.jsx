@@ -6,16 +6,16 @@ function Quizpage() {
 
 	const parsing = [
 		'singular nominative',
-		'singular vocative',
-		'singular accusative',
-		'singular genitive',
-		'singular dative',
-		'singular ablative',
 		'plural nominative',
+		'singular vocative',
 		'plural vocative',
+		'singular accusative',
 		'plural accusative',
+		'singular genitive',
 		'plural genitive',
+		'singular dative',
 		'plural dative',
+		'singular ablative',
 		'plural ablative']
 	const options = parsing.map((answer, index)=>
 		<label className={'option'}>
