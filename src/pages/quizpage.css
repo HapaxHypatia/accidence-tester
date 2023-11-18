@@ -25,10 +25,10 @@
     height: 50px;
     margin: 2px;
     border-radius: 25px;
-
 }
+
 .option:hover{
-    background-color: darkslategrey;
+    background-color: cornflowerblue;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
