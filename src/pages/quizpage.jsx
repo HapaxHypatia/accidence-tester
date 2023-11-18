@@ -1,10 +1,10 @@
 import React from "react";
-import Question from "../components/question";
 import './quizpage.css'
+import questions from "../questions.json";
 
 function Quizpage() {
 
-	const answers = [
+	const parsing = [
 		'singular nominative',
 		'singular vocative',
 		'singular accusative',
@@ -17,17 +17,36 @@ function Quizpage() {
 		'plural genitive',
 		'plural dative',
 		'plural ablative']
-	const options = answers.map((answer, index)=>
-		<div className={'option'}>{answer}</div>)
+	const options = parsing.map((answer, index)=>
+		<label className={'option'}>
+			<input type={"checkbox"} name={index} ></input>
+			{answer}
+		</label>
+		)
+
+	const item = questions[(Math.floor(Math.random() * questions.length))]
+	const question = item.Ending
+
+	const allAnswers = questions.filter(q => q.Ending === question).map(q => q.Parsing)
+	const answers = [...new Set(allAnswers)]
+
+	function check (e){
+		e.preventDefault()
+
+	}
+
 	return (
 		<div id={'main'}>
-			<p>Quizpage</p>
+			<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
 			<div id={'questioncontainer'}>
-				<Question></Question>
-					<div className={'answerbox'}>
-						{options}
-					</div>
+				<div className={'question'}>{question}</div>
+				<form>
+					<div className={'answerbox'}>{options}</div>
+					<button onSubmit={check}>Submit</button>
+				</form>
+
 			</div>
+
 
 		</div>
 	);
