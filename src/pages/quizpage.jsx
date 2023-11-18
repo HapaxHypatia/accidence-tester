@@ -18,9 +18,9 @@ function Quizpage() {
 		'singular ablative',
 		'plural ablative']
 	const options = parsing.map((answer, index)=>
-		<label className={'option'}>
-			<input type={"checkbox"} name={index} ></input>
-			{answer}
+		<label className={'option'} id={index}>
+			<input type={"checkbox"} name={index}></input>
+			<span>{answer}</span>
 		</label>
 		)
 
