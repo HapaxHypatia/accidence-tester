@@ -1,7 +1,7 @@
 import React from "react";
-import AnswerBox from "../components/answerBox";
 import Question from "../components/question";
 import './quizpage.css'
+import Option from "../components/option";
 
 function Quizpage() {
 	return (
@@ -9,7 +9,12 @@ function Quizpage() {
 			<p>Quizpage</p>
 			<div id={'questioncontainer'}>
 				<Question></Question>
-            	<AnswerBox></AnswerBox>
+					<div className={'answerbox'}>
+						<Option></Option>
+						<Option></Option>
+						<Option></Option>
+						<Option></Option>
+					</div>
 			</div>
 
 		</div>

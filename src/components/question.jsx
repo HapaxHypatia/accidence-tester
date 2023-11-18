@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Question() {
+	const [Q, setQ] = useState('question')
 	return (
-		<div className={'question'}>Question</div>
+		<div className={'question'}>{Q}</div>
 	);
 }
 

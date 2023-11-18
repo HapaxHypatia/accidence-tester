@@ -1,7 +1,6 @@
 #App {
   /*border: solid green 5px;*/
   background-color: darkslategrey;
-  min-width: 1200px;
   text-align: center;
   display: grid;
   place-items: center stretch;
