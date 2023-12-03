@@ -4,98 +4,68 @@ import questions from "../questions.json";
 
 function Quizpage() {
 	const [score, setScore] = useState(0)
-	const [checked, setChecked] = useState([
-    {
-        "name": "singular nominative",
-        "checked": " false"
-    },
-    {
-        "name": "plural nominative",
-        "checked": " false"
-    },
-    {
-        "name": "singular vocative",
-        "checked": " false"
-    },
-    {
-        "name": "plural vocative",
-        "checked": " false"
-    },
-    {
-        "name": "singular accusative",
-        "checked": " false"
-    },
-    {
-        "name": "plural accusative",
-        "checked": " false"
-    },
-    {
-        "name": "singular genitive",
-        "checked": " false"
-    },
-    {
-        "name": "plural genitive",
-        "checked": " false"
-    },
-    {
-        "name": "singular dative",
-        "checked": " false"
-    }
-])
-
-	const parsing = [
-		'singular nominative',
-		'plural nominative',
-		'singular vocative',
-		'plural vocative',
-		'singular accusative',
-		'plural accusative',
-		'singular genitive',
-		'plural genitive',
-		'singular dative',
-		'plural dative',
-		'singular ablative',
-		'plural ablative']
-
-		const options = parsing.map((option, index)=>
-		<label className={'option'} id={index}>
-			<input type={"checkbox"} onChange={updateChecked} name={option}></input>
-			<span>{option}</span>
-		</label>
-		)
+	const parsing = {
+		'singular nominative': false,
+		'plural nominative': false,
+		'singular vocative': false,
+		'plural vocative': false,
+		'singular accusative': false,
+		'plural accusative': false,
+		'singular genitive': false,
+		'plural genitive': false,
+		'singular dative': false,
+		'plural dative': false,
+		'singular ablative': false,
+		'plural ablative': false}
 
 	const item = questions[(Math.floor(Math.random() * questions.length))]
 	const question = item.Ending
-
 	const allAnswers = questions.filter(q => q.Ending === question).map(q => q.Parsing)
-	const answers = [...new Set(allAnswers)]
+	console.log("ANSWERS = " + allAnswers)
 
-	function updateChecked(e){
-		e.preventDefault()
-		let r = {name:e.target.name, checked:e.target.checked}
-		setChecked([...checked, r])
-	//	currently working correctly,but rerenders on every state change
-	}
+   //Define useRef() to access form data
+   const formData = useRef();
 
-	function check (e){
-		e.preventDefault()
-		console.log(checked)
-		const chosen = checked.filter(item => item.checked===true)
-		console.log(chosen)
+   //OnSubmit function
+	const onSubmit = (event) => {
+
+		// //Disable default action of form submit button
+		// event.preventDefault();
+
+		//Accessing form reference with formData variable.
+		//Object destructuring to get form fields with their name.
+		const form = formData.current;
+
+		let response = {...parsing}
+		for (var i = 0; i < form.length; i++) {
+		  response[form[i].name] = form[i].checked;
+		}
+		console.log("Response = "+ JSON.stringify(response))
+
+		let correct = {...parsing}
+		for (var i = 0; i < correct.length; i++) {
+			if (i in allAnswers){
+				correct[i] = true
+			}
+		}
+		console.log("Correct= "+JSON.stringify(correct))
+
 		let points = 0
-			//
-			// if (item in answers){
-			// 	points++
-			// }
-			// else{
-			// 	points--
-			// }
+		for (var i = 0; i < response.length; i++){
+			if (response[i] === correct[i]){
+				points++
+			}
+			else {points--}
+		}
+		console.log("Points = "+points)
 		setScore(score+points)
-	}
-
-	function submit(e){
-		e.preventDefault()
-	}
+   }
+	const options = Object.keys(parsing).map((option, index)=>
+		<label className={'option'} id={index.toString()}>
+			<input type={"checkbox"} name={option}></input>
+			<span>{option}</span>
+		</label>
+	)
 
 	function reset(){
 		setScore(0)
@@ -108,7 +78,7 @@ function Quizpage() {
 			<button onClick={reset}>Reset</button>
 			<div id={'questioncontainer'}>
 				<div className={'question'}>{question}</div>
-				<form onSubmit={check}>
+				<form ref={formData} onSubmit={onSubmit}>
 					<div className={'answerbox'}>{options}</div>
 					<button>Submit</button>
 				</form>
