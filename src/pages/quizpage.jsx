@@ -57,6 +57,8 @@ function Quizpage() {
 			else {points--}
 		}
 		console.log("Points = "+points)
+		//TODO replace alert with a custom messsage
+		alert(points+"/12 points")
 		let prev = score
 		setScore(prev+points)
 		//reset all checkboxes
