@@ -33,17 +33,17 @@ function Quizpage() {
 		}
 	}
 	console.log("Correct= "+JSON.stringify(correct))
-	console.log("Length = "+Object.keys(correct).length)
 
 	//Define useRef() to access form data
 	const formData = useRef();
 	const navigate = useNavigate()
+
 	//OnSubmit function
 	const onSubmit = (event) => {
 		event.preventDefault()
 		const form = formData.current;
 		let response = {}
-		for (var i = 0; i < form.length; i++) {
+		for (var i = 0; i < form.length-1; i++) {
 		  response[form[i].name] = form[i].checked;
 		}
 		console.log("Response = "+ JSON.stringify(response))
@@ -51,24 +51,22 @@ function Quizpage() {
 		//Scoring
 		let points = 0
 		for (const key in response){
-			console.log("mark")
 			if (response[key] === correct[key]){
 				points++
 			}
 			else {points--}
 		}
 		console.log("Points = "+points)
-		//TODO scoring 13 instead of 12 for full points
 		let prev = score
 		setScore(prev+points)
+		//reset all checkboxes
 		const inputs = document.getElementsByTagName('input')
-		console.log(inputs.length)
 		for (var i=0; i<inputs.length; i++)  {
 			if (inputs[i].type == 'checkbox')   {
 				inputs[i].checked = false;
 			}
 		}
-		navigate('/quizpage')
+		navigate(`/quizpage/${level}`)
    }
    function handleClick(e){
 		if (e.target.checked == false){
