@@ -5,7 +5,7 @@ function Nav() {
 	return (
 		<nav>
 			<Link to={'/'}>Home</Link>
-			<Link to={'/quizpage'}>Quiz</Link>
+			<Link to={'/quizSetup'}>Quiz</Link>
 		</nav>
 	);
 }

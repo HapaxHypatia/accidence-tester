@@ -1,8 +1,10 @@
 import React, {useRef, useState} from "react";
 import './quizpage.css'
 import questions from "../questions.json";
+import {useNavigate, useParams} from "react-router-dom";
 
 function Quizpage() {
+	const level = useParams()
 	console.log("New render")
 	const [score, setScore] = useState(0)
 	const parsing = {
@@ -31,41 +33,54 @@ function Quizpage() {
 		}
 	}
 	console.log("Correct= "+JSON.stringify(correct))
+	console.log("Length = "+Object.keys(correct).length)
 
-   //Define useRef() to access form data
-   const formData = useRef();
-
-   //OnSubmit function
+	//Define useRef() to access form data
+	const formData = useRef();
+	const navigate = useNavigate()
+	//OnSubmit function
 	const onSubmit = (event) => {
 		event.preventDefault()
-
-		// //Disable default action of form submit button
-		// event.preventDefault();
-
-		//Accessing form reference with formData variable.
-		//Object destructuring to get form fields with their name.
 		const form = formData.current;
-
 		let response = {}
 		for (var i = 0; i < form.length; i++) {
 		  response[form[i].name] = form[i].checked;
 		}
 		console.log("Response = "+ JSON.stringify(response))
 
+		//Scoring
 		let points = 0
 		for (const key in response){
+			console.log("mark")
 			if (response[key] === correct[key]){
 				points++
 			}
 			else {points--}
 		}
 		console.log("Points = "+points)
+		//TODO scoring 13 instead of 12 for full points
 		let prev = score
 		setScore(prev+points)
+		const inputs = document.getElementsByTagName('input')
+		console.log(inputs.length)
+		for (var i=0; i<inputs.length; i++)  {
+			if (inputs[i].type == 'checkbox')   {
+				inputs[i].checked = false;
+			}
+		}
+		navigate('/quizpage')
+   }
+   function handleClick(e){
+		if (e.target.checked == false){
+			e.target.setAttribute('checked', 'true')
+		}
+		else{
+			e.target.setAttribute('checked', 'false')
+		}
    }
 	const options = Object.keys(parsing).map((option, index)=>
 		<label className={'option'} id={index.toString()}>
-			<input type={"checkbox"} name={option}></input>
+			<input type={"checkbox"} name={option} onClick={handleClick}></input>
 			<span>{option}</span>
 		</label>
 	)
