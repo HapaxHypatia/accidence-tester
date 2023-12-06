@@ -3,6 +3,7 @@ import './quizpage.css'
 import questions from "../questions.json";
 
 function Quizpage() {
+	console.log("New render")
 	const [score, setScore] = useState(0)
 	const parsing = {
 		'singular nominative': false,
@@ -18,16 +19,25 @@ function Quizpage() {
 		'singular ablative': false,
 		'plural ablative': false}
 
-	const item = questions[(Math.floor(Math.random() * questions.length))]
-	const question = item.Ending
+	const question = questions[(Math.floor(Math.random() * questions.length))].Ending
 	const allAnswers = questions.filter(q => q.Ending === question).map(q => q.Parsing)
-	console.log("ANSWERS = " + allAnswers)
+	let correct = {}
+	for (const key in parsing) {
+		if (allAnswers.includes(key)){
+			correct[key] = true
+		}
+		else {
+			correct[key] = false
+		}
+	}
+	console.log("Correct= "+JSON.stringify(correct))
 
    //Define useRef() to access form data
    const formData = useRef();
 
    //OnSubmit function
 	const onSubmit = (event) => {
+		event.preventDefault()
 
 		// //Disable default action of form submit button
 		// event.preventDefault();
@@ -36,29 +46,22 @@ function Quizpage() {
 		//Object destructuring to get form fields with their name.
 		const form = formData.current;
 
-		let response = {...parsing}
+		let response = {}
 		for (var i = 0; i < form.length; i++) {
 		  response[form[i].name] = form[i].checked;
 		}
 		console.log("Response = "+ JSON.stringify(response))
 
-		let correct = {...parsing}
-		for (var i = 0; i < correct.length; i++) {
-			if (i in allAnswers){
-				correct[i] = true
-			}
-		}
-		console.log("Correct= "+JSON.stringify(correct))
-
 		let points = 0
-		for (var i = 0; i < response.length; i++){
-			if (response[i] === correct[i]){
+		for (const key in response){
+			if (response[key] === correct[key]){
 				points++
 			}
 			else {points--}
 		}
 		console.log("Points = "+points)
-		setScore(score+points)
+		let prev = score
+		setScore(prev+points)
    }
 	const options = Object.keys(parsing).map((option, index)=>
 		<label className={'option'} id={index.toString()}>
