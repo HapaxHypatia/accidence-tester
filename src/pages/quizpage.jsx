@@ -2,6 +2,7 @@ import React, {useRef, useState} from "react";
 import './quizpage.css'
 import questions from "../questions.json";
 import {useNavigate, useParams} from "react-router-dom";
+import Timer from "../components/timer";
 
 function Quizpage() {
 	console.log("New render")
@@ -95,7 +96,8 @@ function Quizpage() {
 	return (
 		<div id={'main'}>
 			<p>Testing declensions {level}</p>
-			//TODO create list from level to display here
+			{/*TODO create list from level to display here*/}
+			<Timer initialSeconds={300}></Timer>
 			<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
 			<p>Total score: {score}</p>
 			<button onClick={reset}>Reset</button>
