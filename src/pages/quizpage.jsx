@@ -4,8 +4,9 @@ import questions from "../questions.json";
 import {useNavigate, useParams} from "react-router-dom";
 
 function Quizpage() {
-	const level = useParams()
 	console.log("New render")
+	const l= useParams()
+	const level = l["level"]
 	const [score, setScore] = useState(0)
 	const parsing = {
 		'singular nominative': false,
@@ -20,9 +21,12 @@ function Quizpage() {
 		'plural dative': false,
 		'singular ablative': false,
 		'plural ablative': false}
-
-	const question = questions[(Math.floor(Math.random() * questions.length))].Ending
-	const allAnswers = questions.filter(q => q.Ending === question).map(q => q.Parsing)
+	console.log(questions[1])
+	const qlist = questions.filter(q => q.Group <= level)
+	console.log(qlist)
+	console.log(questions[2].Group)
+	const question = qlist[(Math.floor(Math.random() * qlist.length))].Ending
+	const allAnswers = qlist.filter(q => q.Ending === question).map(q => q.Parsing)
 	let correct = {}
 	for (const key in parsing) {
 		if (allAnswers.includes(key)){
@@ -54,7 +58,6 @@ function Quizpage() {
 			if (response[key] === correct[key]){
 				points++
 			}
-			else {points--}
 		}
 		console.log("Points = "+points)
 		//TODO replace alert with a custom messsage
@@ -91,8 +94,10 @@ function Quizpage() {
 
 	return (
 		<div id={'main'}>
+			<p>Testing declensions {level}</p>
+			//TODO create list from level to display here
 			<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
-			<p>{score}</p>
+			<p>Total score: {score}</p>
 			<button onClick={reset}>Reset</button>
 			<div id={'questioncontainer'}>
 				<div className={'question'}>{question}</div>

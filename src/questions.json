@@ -3,462 +3,462 @@
         "Ending": "a",
         "Parsing": "singular nominative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "a",
         "Parsing": "singular vocative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "am",
         "Parsing": "singular accusative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "ae",
         "Parsing": "singular genitive",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "ae",
         "Parsing": "singular dative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "a",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "ae",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "ae",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "as",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "arum",
         "Parsing": "plural genitive",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "is",
         "Parsing": "plural dative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "is",
         "Parsing": "plural ablative",
         "POS": "Noun",
-        "Declension/conjugation": "1"
+        "Group": 1
     },
     {
         "Ending": "us",
         "Parsing": "singular nominative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "er",
         "Parsing": "singular nominative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "e",
         "Parsing": "singular vocative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "er",
         "Parsing": "singular vocative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "um",
         "Parsing": "singular accusative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "i",
         "Parsing": "singular genitive",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "o",
         "Parsing": "singular dative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "o",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "i",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "i",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "os",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "orum",
         "Parsing": "plural genitive",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "is",
         "Parsing": "plural dative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "is",
         "Parsing": "plural ablative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "um",
         "Parsing": "singular nominative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "um",
         "Parsing": "singular vocative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "a",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "a",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "a",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "2"
+        "Group": 2
     },
     {
         "Ending": "em",
         "Parsing": "singular accusative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "is",
         "Parsing": "singular genitive",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "i",
         "Parsing": "singular dative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "e",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "i",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "es",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "es",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "es",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "um",
         "Parsing": "plural genitive",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "ium",
         "Parsing": "plural genitive",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "ibus",
         "Parsing": "plural dative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "ibus",
         "Parsing": "plural ablative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "ia",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "ia",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "ia",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "a",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "a",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "a",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "3"
+        "Group": 3
     },
     {
         "Ending": "us",
         "Parsing": "singular nominative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "us",
         "Parsing": "singular vocative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "um",
         "Parsing": "singular accusative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "us",
         "Parsing": "singular genitive",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ui",
         "Parsing": "singular dative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ui",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "u",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ua",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ua",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ua",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "us",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "us",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "us",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "uum",
         "Parsing": "plural genitive",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ibus",
         "Parsing": "plural dative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "ibus",
         "Parsing": "plural ablative",
         "POS": "Noun",
-        "Declension/conjugation": "4"
+        "Group": 4
     },
     {
         "Ending": "es",
         "Parsing": "singular nominative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "es",
         "Parsing": "singular vocative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "em",
         "Parsing": "singular accusative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "ei",
         "Parsing": "singular genitive",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "ei",
         "Parsing": "singular dative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "e",
         "Parsing": "singular ablative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "es",
         "Parsing": "plural nominative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "es",
         "Parsing": "plural vocative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "es",
         "Parsing": "plural accusative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "erum",
         "Parsing": "plural genitive",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "ebus",
         "Parsing": "plural dative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     },
     {
         "Ending": "ebus",
         "Parsing": "plural ablative",
         "POS": "Noun",
-        "Declension/conjugation": "5"
+        "Group": 5
     }
 ]

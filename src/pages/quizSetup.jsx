@@ -12,8 +12,6 @@ function QuizSetup() {
 	}
 	function handleSetup(e){
 		e.preventDefault()
-		console.log("Enter handler function")
-		console.log(level)
 		let path = `/quizpage/${level}`
         nav(path)
 
