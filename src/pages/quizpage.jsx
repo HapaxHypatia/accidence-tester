@@ -1,24 +1,37 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './quizpage.css'
 import questions from "../questions.json";
 import {useNavigate, useParams} from "react-router-dom";
 import Timer from "../components/timer";
 import EndQuiz from "./endQuiz";
 
+export default Quizpage;
+
 function Quizpage() {
+
 	console.log("New render")
+	//set up state
+	const navigate = useNavigate()
 	const [buttonStatus, setButtonStatus] = useState(true)
 	const [timeup, setTimeup] = useState(false)
-	setTimeout(function (){
-		//timeout on submit button to eliminate random clicking
-		if (buttonStatus==true){setButtonStatus(false)}
-	},2500)
+	const [messageStatus, setMessageStatus] = useState(true)
+	const level = useParams()["level"]
 
-	const l= useParams()
-	const level = l["level"]
 	const [score, setScore] = useState(0)
+	const [points, setPoints] = useState(0)
+
+	function reset(){
+		setScore(0)
+		window.location.reload(false);
+	}
+
+	function handleCallback (bool){
+		setTimeup(bool);
+	}
+
+	//set up question & answers
 	const parsing = {
-		'singular nominative': false,
+	'singular nominative': false,
 		'plural nominative': false,
 		'singular vocative': false,
 		'plural vocative': false,
@@ -36,11 +49,40 @@ function Quizpage() {
 	let correct = {}
 	for (const key in parsing) {
 		correct[key] = !!allAnswers.includes(key);
+
+	}
+	//set up checkboxes & form
+	const formData = useRef();
+	function handleClick(e){
+		if (e.target.checked === false){
+			e.target.setAttribute('checked', 'true')
+		}
+		else{
+			e.target.setAttribute('checked', 'false')
+
+		}
+
 	}
 
-	//Define useRef() to access form data
-	const formData = useRef();
-	const navigate = useNavigate()
+	const options = Object.keys(parsing).map((option, index)=>
+		<label className={'option'} id={index.toString()}>
+			<input type={"checkbox"} name={option} onClick={handleClick}></input>
+			<span>{option}</span>
+		</label>
+	)
+
+	//timeout on submit button to discourage random clicking
+	setTimeout(function (){
+		if (buttonStatus==true){setButtonStatus(false)}
+	},2000)
+
+	function displayPoints(){
+		//display points
+		let p = points
+		setMessageStatus(false)
+		setTimeout(() => {
+		setMessageStatus(true);}, 750);
+	}
 
 	//OnSubmit function
 	const onSubmit = (event) => {
@@ -49,49 +91,29 @@ function Quizpage() {
 		const form = formData.current;
 		let response = {}
 		for (i = 0; i < form.length-1; i++) {
-		  response[form[i].name] = form[i].checked;
-		}
+			response[form[i].name] = form[i].checked;
 
+		}
 		//Scoring
-		let points = 0
+		let p = 0
 		for (const key in response){
 			if (response[key] === correct[key]){
-				points++
+				p++
 			}
 		}
-		//TODO replace alert with a custom messsage
-		alert(points+"/12 points")
-		setScore(score+points)
+		setPoints(p)
+		displayPoints()
+
 		//reset all checkboxes
 		const inputs = document.getElementsByTagName('input')
-		for (i = 0; i<inputs.length; i++)  {
-			if (inputs[i].type === 'checkbox')   {
-				inputs[i].checked = false;
-			}
+		for (let i = 0; i<inputs.length; i++)  {
+		if (inputs[i].type === 'checkbox') {
+		inputs[i].checked = false;}
 		}
+
+		setScore(score+points)
 		navigate(`/quizpage/${level}`)
-   }
-   function handleClick(e){
-		if (e.target.checked === false){
-			e.target.setAttribute('checked', 'true')
-		}
-		else{
-			e.target.setAttribute('checked', 'false')
-		}
-   }
-	const options = Object.keys(parsing).map((option, index)=>
-		<label className={'option'} id={index.toString()}>
-			<input type={"checkbox"} name={option} onClick={handleClick}></input>
-			<span>{option}</span>
-		</label>
-	)
 
-	function reset(){
-		setScore(0)
-	}
-
-	function handleCallback (bool){
-		setTimeup(bool);
 	}
 
 	return (
@@ -99,25 +121,23 @@ function Quizpage() {
 			{
 				timeup? (<EndQuiz s={score}></EndQuiz>) :
 
-				(<div id={'main'}>
-					<p>Testing declensions {level}</p>
-					{/*TODO create list from level to display here*/}
-					<Timer initialSeconds={3} cb={handleCallback}></Timer>
-					{/*TODO implement action on timer end*/}
-					<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
-					<p>Total score: {score}</p>
-					<button onClick={reset}>Reset</button>
-					<div id={'questioncontainer'}>
-						<div className={'question'}>{question}</div>
-						<form ref={formData} onSubmit={onSubmit}>
-							<div className={'answerbox'}>{options}</div>
-							<button disabled={buttonStatus}>Submit</button>
-						</form>
-					</div>
-				</div>)
+					(<div id={'main'}>
+						<p>Testing declensions {level}</p>
+						{/*TODO create list from level to display here*/}
+						<Timer initialSeconds={300} cb={handleCallback}></Timer>
+						<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
+						<p>Total score: {score}</p>
+						<button onClick={reset}>Start again</button>
+						<div id={'questioncontainer'}>
+							<div className={'question'}>{question}</div>
+							<form ref={formData} onSubmit={onSubmit}>
+								<div className={'answerbox'}>{options}</div>
+								<button disabled={buttonStatus}>Submit</button>
+							</form>
+						</div>
+						<div hidden={messageStatus} className={'message-popup'}>Points earned {points}</div>
+					</div>)
 			}
 		</div>
-		);
+	);
 }
-
-export default Quizpage;

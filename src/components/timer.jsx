@@ -20,8 +20,6 @@ function Timer({ initialSeconds , cb}) {
     return () => clearInterval(timer);
     }, [seconds]);
 
-    //TODO add functions to stop and start timer
-
     // Format the remaining time (e.g., “00:05:10” for 5 minutes and 10 seconds)
     const formatTime = (timeInSeconds) => {
         const minutes = Math.floor(timeInSeconds / 60)

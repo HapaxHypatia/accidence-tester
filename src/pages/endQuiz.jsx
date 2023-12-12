@@ -6,8 +6,8 @@ function EndQuiz(s) {
 	console.log("component rendered")
 	return (
 		<div id={'main'}>
-			{score}
-			<p>End of quiz</p>
+			<h2>End of quiz</h2>
+			<p> You scored {score} points</p>
 		</div>
 	);
 }

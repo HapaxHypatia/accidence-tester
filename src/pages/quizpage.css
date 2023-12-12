@@ -79,3 +79,22 @@ button:active {
   box-shadow: none;
   color: #2c5777;
 }
+
+/* Message Popup Styles */
+.message-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 100px;
+    background-color: cyan;
+    text-align: center;
+    border-radius: 15px;
+    font-size: xxx-large;
+    line-height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.message-popup.hidden {
+  display: none;
+}
