@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
 
-function Timer({ initialSeconds }) {
+
+function Timer({ initialSeconds , cb}) {
     const [seconds, setSeconds] = useState(initialSeconds);
 
     useEffect(() => {
     // Exit early if countdown is finished
         if (seconds <= 0) {
+            cb(true)
         return;
         }
 
@@ -18,20 +20,21 @@ function Timer({ initialSeconds }) {
     return () => clearInterval(timer);
     }, [seconds]);
 
+    //TODO add functions to stop and start timer
+
     // Format the remaining time (e.g., “00:05:10” for 5 minutes and 10 seconds)
     const formatTime = (timeInSeconds) => {
-    const minutes = Math.floor(timeInSeconds / 60)
-        .toString()
-        .padStart(2, '0');
-    const seconds = (timeInSeconds % 60).toString().padStart(2,'0');
-    return `${minutes}:${seconds}`;
-    };
-
+        const minutes = Math.floor(timeInSeconds / 60)
+            .toString()
+            .padStart(2, '0');
+        const seconds = (timeInSeconds % 60).toString().padStart(2,'0');
+        return `${minutes}:${seconds}`;
+        };
     return (
-    <div>
-    <h3>Earn as many points as you can in 5 minutes</h3>
-    <p>{formatTime(seconds)}</p>
-    </div>
+        <div>
+            <h3>Earn as many points as you can in 5 minutes</h3>
+            <p>{formatTime(seconds)}</p>
+        </div>
     );
 }
 
