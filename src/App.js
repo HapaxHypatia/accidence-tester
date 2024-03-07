@@ -13,9 +13,10 @@ function App() {
 		<Nav/>
 		<Routes>
 			<Route path="/" element={<Home />} />
+			<Route path="/index.html" element={<Home />} />
 			<Route path="/end" element={<EndQuiz />} />
 			<Route path="/quizSetup" element={<QuizSetup />} />
-			<Route path="/quizpage/:level" element={<Quizpage/>}/>
+			<Route path="/quizpage/:level/:minutes" element={<Quizpage/>}/>
 			<Route path="*" element={<Navigate to="/" replace />} />
 		</Routes>
 	</div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import './quizpage.css'
 import questions from "../questions.json";
 import {useNavigate, useParams} from "react-router-dom";
@@ -12,13 +12,14 @@ function Quizpage() {
 	console.log("New render")
 	//set up state
 	const navigate = useNavigate()
-	const [buttonStatus, setButtonStatus] = useState(true)
 	const [timeup, setTimeup] = useState(false)
 	const [messageStatus, setMessageStatus] = useState(true)
-	const level = useParams()["level"]
-
+	const params = useParams()
+	const minutes = params["minutes"]
+	const level = params["level"]
 	const [score, setScore] = useState(0)
 	const [points, setPoints] = useState(0)
+	const [feedback, setFeedback] = useState([])
 
 	function reset(){
 		setScore(0)
@@ -28,6 +29,7 @@ function Quizpage() {
 	function handleCallback (bool){
 		setTimeup(bool);
 	}
+
 
 	//set up question & answers
 	const parsing = {
@@ -43,7 +45,14 @@ function Quizpage() {
 		'plural dative': false,
 		'singular ablative': false,
 		'plural ablative': false}
-	const qlist = questions.filter(q => q.Group <= level)
+
+	// filter question list by array of levels selected
+	let qlist = []
+	for (const option of level) {
+		let Qs = questions.filter(q => q.Group === parseInt(option))
+		qlist = (qlist.concat(...Qs))
+	}
+
 	const question = qlist[(Math.floor(Math.random() * qlist.length))].Ending
 	const allAnswers = qlist.filter(q => q.Ending === question).map(q => q.Parsing)
 	let correct = {}
@@ -51,6 +60,7 @@ function Quizpage() {
 		correct[key] = !!allAnswers.includes(key);
 
 	}
+
 	//set up checkboxes & form
 	const formData = useRef();
 	function handleClick(e){
@@ -72,16 +82,14 @@ function Quizpage() {
 	)
 
 	//timeout on submit button to discourage random clicking
-	setTimeout(function (){
-		if (buttonStatus==true){setButtonStatus(false)}
-	},2000)
+	const submit = useRef()
+	setTimeout(function (){submit.current.disabled = false},2000)
 
 	function displayPoints(){
 		//display points
-		let p = points
 		setMessageStatus(false)
 		setTimeout(() => {
-		setMessageStatus(true);}, 750);
+		setMessageStatus(true);}, 2500);
 	}
 
 	//OnSubmit function
@@ -102,7 +110,15 @@ function Quizpage() {
 			}
 		}
 		setPoints(p)
+
+		const fb = qlist.filter(q => q.Ending === question).map((q)=>
+		<div>
+			Declension {q.Group}: {q.Parsing}
+		</div>
+		)
+		setFeedback(fb)
 		displayPoints()
+
 
 		//reset all checkboxes
 		const inputs = document.getElementsByTagName('input')
@@ -111,8 +127,9 @@ function Quizpage() {
 		inputs[i].checked = false;}
 		}
 
+
 		setScore(score+points)
-		navigate(`/quizpage/${level}`)
+		navigate(`/quizpage/${level}/${minutes}`)
 
 	}
 
@@ -124,7 +141,7 @@ function Quizpage() {
 					(<div id={'main'}>
 						<p>Testing declensions {level}</p>
 						{/*TODO create list from level to display here*/}
-						<Timer initialSeconds={300} cb={handleCallback}></Timer>
+						<Timer initialSeconds={minutes*60} cb={handleCallback}></Timer>
 						<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
 						<p>Total score: {score}</p>
 						<button onClick={reset}>Start again</button>
@@ -132,10 +149,13 @@ function Quizpage() {
 							<div className={'question'}>{question}</div>
 							<form ref={formData} onSubmit={onSubmit}>
 								<div className={'answerbox'}>{options}</div>
-								<button disabled={buttonStatus}>Submit</button>
+								<button ref={submit} disabled>Submit</button>
 							</form>
 						</div>
-						<div hidden={messageStatus} className={'message-popup'}>Points earned {points}</div>
+						<div hidden={messageStatus} className={'message-popup'}>
+							<h1>Points earned {points}</h1>
+							{feedback}
+						</div>
 					</div>)
 			}
 		</div>
