@@ -1,0 +1,458 @@
+[
+    {
+        "Ending": "a",
+        "Parsing": "singular nominative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "a",
+        "Parsing": "singular vocative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "am",
+        "Parsing": "singular accusative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ae",
+        "Parsing": "singular genitive",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ae",
+        "Parsing": "singular dative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ā",
+        "Parsing": "singular ablative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ae",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ae",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ās",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "ārum",
+        "Parsing": "plural genitive",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "īs",
+        "Parsing": "plural dative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "īs",
+        "Parsing": "plural ablative",
+        "POS": "Noun",
+        "Group": 1
+    },
+    {
+        "Ending": "us",
+        "Parsing": "singular nominative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "er",
+        "Parsing": "singular nominative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "e",
+        "Parsing": "singular vocative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "er",
+        "Parsing": "singular vocative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "um",
+        "Parsing": "singular accusative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ī",
+        "Parsing": "singular genitive",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ō",
+        "Parsing": "singular dative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ō",
+        "Parsing": "singular ablative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ī",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ī",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ōs",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "ōrum",
+        "Parsing": "plural genitive",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "īs",
+        "Parsing": "plural dative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "īs",
+        "Parsing": "plural ablative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "um",
+        "Parsing": "singular nominative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "um",
+        "Parsing": "singular vocative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "a",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "a",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "a",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 2
+    },
+    {
+        "Ending": "em",
+        "Parsing": "singular accusative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "is",
+        "Parsing": "singular genitive",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ī",
+        "Parsing": "singular dative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "e",
+        "Parsing": "singular ablative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ī",
+        "Parsing": "singular ablative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "um",
+        "Parsing": "plural genitive",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ium",
+        "Parsing": "plural genitive",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ibus",
+        "Parsing": "plural dative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ibus",
+        "Parsing": "plural ablative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ia",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ia",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "ia",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "a",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "a",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "a",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 3
+    },
+    {
+        "Ending": "us",
+        "Parsing": "singular nominative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "us",
+        "Parsing": "singular vocative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "um",
+        "Parsing": "singular accusative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ūs",
+        "Parsing": "singular genitive",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "uī",
+        "Parsing": "singular dative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ū",
+        "Parsing": "singular ablative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ua",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ua",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ua",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ūs",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ūs",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ūs",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "uum",
+        "Parsing": "plural genitive",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ibus",
+        "Parsing": "plural dative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ibus",
+        "Parsing": "plural ablative",
+        "POS": "Noun",
+        "Group": 4
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "singular nominative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "singular vocative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "em",
+        "Parsing": "singular accusative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "eī",
+        "Parsing": "singular genitive",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "eī",
+        "Parsing": "singular dative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ē",
+        "Parsing": "singular ablative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "plural nominative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "plural vocative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ēs",
+        "Parsing": "plural accusative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ērum",
+        "Parsing": "plural genitive",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ēbus",
+        "Parsing": "plural dative",
+        "POS": "Noun",
+        "Group": 5
+    },
+    {
+        "Ending": "ēbus",
+        "Parsing": "plural ablative",
+        "POS": "Noun",
+        "Group": 5
+    }
+]

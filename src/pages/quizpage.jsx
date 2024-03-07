@@ -1,6 +1,7 @@
 import React, {useRef, useState} from "react";
 import './quizpage.css'
 import questions from "../questions.json";
+import macron_questions from "../macron_questions.json";
 import {useNavigate, useParams} from "react-router-dom";
 import Timer from "../components/timer";
 import EndQuiz from "./endQuiz";
@@ -17,6 +18,7 @@ function Quizpage() {
 	const params = useParams()
 	const minutes = params["minutes"]
 	const level = params["level"]
+	const macrons = params["macrons"]
 	const [score, setScore] = useState(0)
 	const [points, setPoints] = useState(0)
 	const [feedback, setFeedback] = useState([])
@@ -29,7 +31,6 @@ function Quizpage() {
 	function handleCallback (bool){
 		setTimeup(bool);
 	}
-
 
 	//set up question & answers
 	const parsing = {
@@ -46,10 +47,15 @@ function Quizpage() {
 		'singular ablative': false,
 		'plural ablative': false}
 
+	//set macron status
+	let qdata
+	if (macrons === 'false'){ qdata = questions}
+	else{qdata = macron_questions}
+
 	// filter question list by array of levels selected
 	let qlist = []
 	for (const option of level) {
-		let Qs = questions.filter(q => q.Group === parseInt(option))
+		let Qs = qdata.filter(q => q.Group === parseInt(option))
 		qlist = (qlist.concat(...Qs))
 	}
 
@@ -129,7 +135,7 @@ function Quizpage() {
 
 
 		setScore(score+points)
-		navigate(`/quizpage/${level}/${minutes}`)
+		navigate(`/quizpage/${level}/${minutes}/${macrons}`)
 
 	}
 
@@ -142,7 +148,7 @@ function Quizpage() {
 						<p>Testing declensions {level}</p>
 						{/*TODO create list from level to display here*/}
 						<Timer initialSeconds={minutes*60} cb={handleCallback}></Timer>
-						<p>Select all the options for the following ending. Note that macrons are not used in this quiz</p>
+						<p>Select all the options for the following ending.</p>
 						<p>Total score: {score}</p>
 						<button onClick={reset}>Start again</button>
 						<div id={'questioncontainer'}>
