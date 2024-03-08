@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/user/public_html/latinitas
+    - /bin/cp -R build $DEPLOYPATH
