@@ -8,7 +8,7 @@ import EndQuiz from "./endQuiz";
 
 export default Quizpage;
 
-//Adding comment to test deployment pathtesting
+//Changing comment to test deployment path testing
 
 function Quizpage() {
 
