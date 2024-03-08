@@ -146,7 +146,6 @@ function Quizpage() {
 
 					(<div id={'main'}>
 						<p>Testing declensions {level}</p>
-						{/*TODO create list from level to display here*/}
 						<Timer initialSeconds={minutes*60} cb={handleCallback}></Timer>
 						<p>Select all the options for the following ending.</p>
 						<p>Total score: {score}</p>

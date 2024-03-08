@@ -30,7 +30,7 @@ function Timer({ initialSeconds , cb}) {
         };
     return (
         <div>
-            <h3>Earn as many points as you can in 5 minutes</h3>
+            <h3>Earn as many points as you can in {Math.floor(seconds / 60)} minutes </h3>
             <p>{formatTime(seconds)}</p>
         </div>
     );
