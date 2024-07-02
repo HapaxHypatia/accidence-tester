@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/hapaxhyp/public_html/hapaxhypatia.com/LatinitasAdmin
+    - export DEPLOYPATH=/home/hapaxhyp/public_html/latinitas
     - /bin/cp -R build $DEPLOYPATH
