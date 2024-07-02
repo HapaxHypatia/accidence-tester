@@ -24,7 +24,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.hapaxhypatia.com
+        server: ftp.hapaxhypatia.com/latinitas
         username: ${{ secrets.GG_USERNAME }}
         password: ${{ secrets.GG_PASSWORD }}
         local-dir: ./build/
