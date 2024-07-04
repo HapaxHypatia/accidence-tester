@@ -37,7 +37,7 @@ function QuizSetup() {
 			<p>QuizSetup</p>
 			&nbsp;&nbsp;&nbsp;
 			<label htmlFor={"noun-options"}>Which declensions?</label>
-            <select onChange={handleChangeDecl} name="noun-options" id="noun-options">
+            <select onChange={handleChangeDecl} name="noun-options" id="noun-options" multiple>
 				<option value={'5'}>5</option>
 				<option value={'4'}>4</option>
 				<option value={'3'}>3</option>

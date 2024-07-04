@@ -111,6 +111,8 @@ function Quizpage() {
 
 		}
 		//Scoring
+		//TODO consider different scoring method (no points for unclicked items)
+		//TODO not getting all possible answers on endings that go across declensions
 		let p = 0
 		for (const key in response){
 			if (response[key] === correct[key]){
