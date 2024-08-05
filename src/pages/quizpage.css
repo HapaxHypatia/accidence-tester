@@ -87,8 +87,8 @@ button:active {
     left: 50%;
     top: 65%;
     transform: translate(-50%, -50%);
-    width: 30%;
-    height: 550px;
+    width: 25%;
+    height: 350px;
     background-color: cyan;
     text-align: center;
     border-radius: 15px;
